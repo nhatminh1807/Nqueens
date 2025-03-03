@@ -1,11 +1,11 @@
-# Báo cáo Bài tập lớn - Nhóm X
+# Báo cáo Bài tập lớn - Nhóm 4
 
 ## 1. Thông tin nhóm
 | STT | Họ và tên | MSSV | Vai trò |
 |---|---|---|---|
 | 1 | Bùi Anh Tuấn | 24022839 | Nhóm trưởng |
 | 2 | Nguyễn Nhật Minh | 24022818 | Thành viên |
-| 3 | Nguyễn Minh Hùng | 123458 | Thành viên |
+| 3 | Nguyễn Minh Hùng | 24022794 | Thành viên |
 | 4 | Hoàng Trung Hiếu | 24022789 | Thành viên |
 | 5 | Hồ Lê Tuấn Đạt | 23021395 | Thành viên |
 
