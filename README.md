@@ -20,15 +20,17 @@
 ## 3. Hướng giải quyết bài toán
 
 ### a. Phân tích bài toán
-Đặt N quân hậu trên bàn cờ NxN sao cho không quân hậu nào ăn nhau.
+- Đặt N quân hậu trên bàn cờ NxN sao cho không quân hậu nào ăn nhau.
 - Quân hậu có thể tấn công theo hàng, cột và đường chéo.
 - Mục tiêu: Tìm cách sắp xếp hợp lệ.
-- 
+
 ### b. Thuật toán/Hướng tiếp cận
 - Duyệt từng dòng, mỗi dòng đặt 1 quân hậu.
 - Đệ quy xuống dòng tiếp theo.
 - Kiểm tra tính hợp lệ trước khi đặt quân hậu.
 - Nếu đặt thành công tất cả N quân hậu thì tìm được một nghiệm.
+### c. Ưu điểm và hạn chế
+
 ---
 
 ## 4. Ví dụ minh hoạ
