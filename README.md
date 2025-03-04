@@ -36,10 +36,13 @@
 
 ## 4. Ví dụ minh hoạ
 ### Ví dụ 1
-**Input:**  
+**Input:**
 N=-2
+
 **Output:**
+
 No Solution!
+
 **Giải thích:**  
 Khi bạn nhập N=-2, chương trình sẽ phát hiện giá trị nhập không hợp lệ và xử lý như sau:
 1.	Chương trình đọc N = -2 và kiểm tra điều kiện (int)N != N. Vì N là số nguyên, điều kiện này là sai.
@@ -49,9 +52,12 @@ Khi bạn nhập N=-2, chương trình sẽ phát hiện giá trị nhập khôn
 
 ### Ví dụ 2
 **Input:**  
+
 N=2.5
 **Output:**
+
 Input error!
+
 **Giải thích:**  
 Khi bạn nhập N=2.5, chương trình sẽ phát hiện giá trị nhập không hợp lệ và xử lý như sau:
 1.	Chương trình đọc N = 2.5 và kiểm tra điều kiện (int)N != N. Vì N là số thực và không phải số nguyên, điều kiện này đúng.
