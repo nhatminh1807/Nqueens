@@ -101,7 +101,7 @@ Nếu không tìm thấy giải pháp hợp lệ hoặc sau khi đã in ra một
 ---
 
 ## 5. Link video báo cáo
-[Truy cập Google Drive](https://drive.google.com/drive/folders/1Glk_VXuDn6Ve8kYICEHiUGFqEMfVGXFp)
+[nhóm 4](https://drive.google.com/drive/folders/1Glk_VXuDn6Ve8kYICEHiUGFqEMfVGXFp)
 
 
 ---
