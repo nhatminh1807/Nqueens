@@ -9,8 +9,6 @@ vector <bool> c1;
 vector <bool> c2;
 vector <bool> c;
 
-
-//ham de quy
 bool check(int i, int j) {
     if (c[j] == false || c1[i - j + N - 1] == false || c2[i + j - 2] ==  false)
         return false;
@@ -29,8 +27,6 @@ void NQueen(int i) {
             c[j] = c1[i - j + N - 1] = c2[i + j - 2] = true;
         }
 }
-//
-
 
 int main() {
     cout << "N = ";
@@ -40,5 +36,15 @@ int main() {
     c1.resize(2 * N - 1, true);
     c2.resize(2 * N - 1, true);
     NQueen(1);
-    cout << a.size() << endl;
+    cout << a.size() << endl << endl;
+    for (int k = 0; k < a.size(); k++) {
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= N; j++) {
+                cout << (j == a[k][i]) << " ";
+                if (j % N == 0)
+                    cout << endl;
+            }
+        }
+        cout << endl;
+    }
 }
