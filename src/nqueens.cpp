@@ -2,7 +2,8 @@
 
 using namespace std;
 
-int N, qIndex[28];
+float N;
+int qIndex[28];
 
 bool checkRow(int nRow){
     for (int row = 1; row < nRow; row++){
@@ -36,6 +37,11 @@ void backtrack(int row){
 
 int main(){
     cin >> N;
-    backtrack(1);
+    if ((int)N != N)
+        cout << "Input error!";
+    else if (N <= 3 && N != 1)
+        cout << "No solution!";
+    else
+        backtrack(1);
     return 0;
 }
