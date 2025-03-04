@@ -38,7 +38,7 @@
 ### Ví dụ 1
 **Input:**  
 N=-2
-**Output:**  
+**Output:**
 No Solution!
 **Giải thích:**  
 Khi bạn nhập N=-2, chương trình sẽ phát hiện giá trị nhập không hợp lệ và xử lý như sau:
