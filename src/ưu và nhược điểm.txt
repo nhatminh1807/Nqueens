@@ -1,54 +1,21 @@
-Ưu điểm
+Ưu điểm:
 
-1.Đơn giản và dễ hiểu:
-Code sử dụng phương pháp quay lui (backtracking) một cách trực quan, với logic rõ ràng: thử đặt quân hậu, kiểm tra hợp lệ, và quay lui nếu không thành công.
+•Dùng quay lui để kiểm tra tất cả các cách đặt quân hậu hợp lệ.
+•Hàm check() đảm bảo rằng mỗi quân hậu mới đặt không bị tấn công bởi quân hậu đã đặt trước đó.
+•Code đơn giản, sử dụng đệ quy để kiểm tra từng vị trí hợp lệ.
+•Không sử dụng thuật toán quá phức tạp, dễ mở rộng cho các giá trị n lớn hơn.
+•Không cần sử dụng thêm mảng đánh dấu:
+ + Một số giải pháp dùng mảng col[], diag1[], diag2[] để kiểm tra nhanh hơn, nhưng ở đây chỉ sử dụng một mảng x[], giúp tiết kiệm bộ nhớ.
 
-Các hàm được tách biệt (check và NQueen) giúp dễ đọc
+Nhược điểm:
 
-2.Tính chính xác:
-Code xử lý đầy đủ các ràng buộc của bài toán N-Queens: không có quân hậu nào cùng hàng, cột, hoặc đường chéo.
+• Hiệu suất không tối ưu:
 
-Sử dụng các mảng đánh dấu (column, mainDiagonal, primaryDiagonal) để kiểm tra các điều kiện.
-
-3.Linh hoạt với kích thước N:
-Người dùng có thể nhập bất kỳ giá trị N nào (trong giới hạn bộ nhớ), và code tự động điều chỉnh kích thước các vector tương ứng.
-
-
-4.Sử dụng STL (Standard Template Library):
-Dùng vector thay vì mảng tĩnh giúp tránh lỗi tràn bộ nhớ với N lớn và tăng tính linh hoạt.
-
-
-
-Nhược điểm
-
-1.Hiệu suất không tối ưu với N lớn:
-Thuật toán quay lui có độ phức tạp thời gian là O(N!)O(N!)O(N!), dẫn đến việc chương trình chạy rất chậm khi N tăng (ví dụ: N>12N > 12N>12).
-
-Không có tối ưu hóa như sử dụng bitset thay cho vector hay các kỹ thuật cắt tỉa để giảm số trường hợp cần kiểm tra.
-
-
-2.Sử dụng chỉ số từ 1 thay vì 0:
-Thông thường trong C++, chỉ số mảng/vector bắt đầu từ 0. Việc dùng chỉ số từ 1 làm code không tuân theo chuẩn mực, dễ gây nhầm lẫn khi bảo trì hoặc tích hợp với code khác.
-
-Ví dụ: queenIndex[0], column[0] không được dùng, dẫn đến lãng phí bộ nhớ.
-
-
-3.Kích thước vector không nhất quán:
-mainDiagonal và primaryDiagonal có kích thước 2N - 1, nhưng công thức chỉ số như row - col + N - 1 hoặc row + col - 2 có thể dẫn đến truy cập ngoài phạm vi nếu không cẩn thận (dù trong code này chưa xảy ra lỗi).
-
-
-4.Tiêu tốn bộ nhớ:
-Lưu toàn bộ các cách giải trong possibleSolution có thể gây tràn bộ nhớ với N lớn, đặc biệt khi số cách giải tăng theo cấp số nhân.
-
-Nếu chỉ cần đếm số cách giải mà không cần in, việc lưu tất cả giải pháp là không cần thiết.
-
-
-5.Thiếu xử lý lỗi:
-Không kiểm tra giá trị đầu vào N (ví dụ: nếu nhập số âm hoặc không phải số nguyên).
-
-Nếu không có giải pháp (như với N=2N = 2N=2 hoặc N=3N = 3N=3), chương trình vẫn chạy mà không thông báo gì đặc biệt.
-
-
-
-
-
+• Do mỗi lần đặt quân hậu, chương trình kiểm tra lại toàn bộ danh sách quân hậu đã đặt, nên độ phức tạp gần với O(n!).
+• Với n lớn, chương trình sẽ chạy chậm do phải thử nhiều nhánh không cần thiết.
+• Không sử dụng kỹ thuật tối ưu hóa:
++  Có thể cải thiện bằng cách dùng bitmask hoặc mảng đánh dấu (col[], diag1[], diag2[]) để giảm thời gian kiểm tra va chạm.
+• Duyệt toàn bộ lời giải:
+ + Nếu chỉ cần tìm một lời giải hợp lệ thay vì liệt kê tất cả, thì chương trình không dừng lại ngay khi tìm được lời giải đầu tiên.
+• Cách in kết quả tốn bộ nhớ:
+ + Xuất ra toàn bộ bàn cờ dưới dạng n x n sẽ tốn nhiều tài nguyên, nhất là với n lớn. Thay vào đó, chỉ cần in danh sách x[i] là đủ.
