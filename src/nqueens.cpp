@@ -2,52 +2,40 @@
 
 using namespace std;
 
-int N = 1;
-vector <int> queenIndex;
-vector<vector<int>> possibleSolution;
-vector <bool> mainDiagonal;
-vector <bool> primaryDiagonal;
-vector <bool> column;
+int N, qIndex[28];
 
-bool check(int row, int col) {
-    if (column[col] == false || mainDiagonal[row - col + N - 1] == false || primaryDiagonal[row + col - 2] ==  false)
-        return false;
+bool checkRow(int nRow){
+    for (int row = 1; row < nRow; row++){
+        if (qIndex[row] == qIndex[nRow] || abs(nRow - row) == abs(qIndex[nRow] - qIndex[row])){
+            return false;
+        }
+    }
     return true;
 }
 
-void NQueen(int row) {
+void printChessBoard(){
+    for (int row = 1; row <= N; row++){
+        for (int col = 1; col <= N; col++){
+            if (col == qIndex[row]){
+                cout << 1 << " ";
+            } else cout << 0 << " ";
+        }
+        cout << "\n";
+    }
+    cout << "\n";
+}
+
+void backtrack(int row){
     for (int col = 1; col <= N; col++){
-        if (check(row, col)) {
-            queenIndex[row] = col;
-            column[col] = mainDiagonal[row - col + N - 1] = primaryDiagonal[row + col - 2] = false;
-            if (row == N)
-                possibleSolution.push_back(queenIndex);
-            else
-                NQueen(row + 1);
-            column[col] = mainDiagonal[row - col + N - 1] = primaryDiagonal[row + col - 2] = true;
+        qIndex[row] = col;
+        if (checkRow(row)){
+            if (row < N) backtrack(row + 1); else printChessBoard();
         }
     }
 }
 
-int main() {
-    cout << "N = ";
+int main(){
     cin >> N;
-
-    queenIndex.resize(N + 1);
-    column.resize(N + 1, true);
-    mainDiagonal.resize(2 * N - 1, true);
-    primaryDiagonal.resize(2 * N - 1, true);
-    
-    NQueen(1);
-    cout << possibleSolution.size() << endl << endl;
-    for (int k = 0; k < possibleSolution.size(); k++) {
-        for (int i = 1; i <= N; i++) {
-            for (int j = 1; j <= N; j++) {
-                cout << (j == possibleSolution[k][i]) << " ";
-                if (j % N == 0)
-                    cout << endl;
-            }
-        }
-        cout << endl;
-    }
+    backtrack(1);
+    return 0;
 }
