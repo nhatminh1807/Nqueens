@@ -40,7 +40,6 @@
 N=-2
 
 **Output:**
-
 No Solution!
 
 **Giải thích:**  
@@ -55,7 +54,6 @@ Khi bạn nhập N=-2, chương trình sẽ phát hiện giá trị nhập khôn
 
 N=2.5
 **Output:**
-
 Input error!
 
 **Giải thích:**  
@@ -67,8 +65,10 @@ Khi bạn nhập N=2.5, chương trình sẽ phát hiện giá trị nhập khô
 ### Ví dụ 3
 **Input:**  
 N=5  
+
 **Output:**  
 (Mô tả output)  
+
 **Giải thích:**  
 1.	Chương trình đọc giá trị N = 5.
 2.	Kiểm tra điều kiện (int)N != N, điều kiện này là sai vì N là số nguyên.
