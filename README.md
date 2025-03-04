@@ -36,11 +36,9 @@
 
 ## 4. Ví dụ minh hoạ
 ### Ví dụ 1
-**Input:**
-N=-2
+**Input:** N=-2
 
-**Output:**
-No Solution!
+**Output:** No Solution!
 
 **Giải thích:**  
 Khi bạn nhập N=-2, chương trình sẽ phát hiện giá trị nhập không hợp lệ và xử lý như sau:
@@ -50,11 +48,9 @@ Khi bạn nhập N=-2, chương trình sẽ phát hiện giá trị nhập khôn
 
 
 ### Ví dụ 2
-**Input:**  
+**Input:**  N=2.5
 
-N=2.5
-**Output:**
-Input error!
+**Output:** Input error!
 
 **Giải thích:**  
 Khi bạn nhập N=2.5, chương trình sẽ phát hiện giá trị nhập không hợp lệ và xử lý như sau:
@@ -63,11 +59,22 @@ Khi bạn nhập N=2.5, chương trình sẽ phát hiện giá trị nhập khô
 
 
 ### Ví dụ 3
-**Input:**  
-N=5  
+**Input:**  N=5  
 
 **Output:**  
 (Mô tả output)  
+1 0 0 0 0   1 0 0 0 0   0 1 0 0 0   0 1 0 0 0   0 0 1 0 0  
+0 0 1 0 0   0 0 0 1 0   0 0 0 0 1   0 0 1 0 0   0 0 0 0 1  
+0 0 0 0 1   0 1 0 0 0   1 0 0 0 0   0 0 1 0 0   0 1 0 0 0  
+0 1 0 0 0   0 0 0 0 1   0 0 1 0 0   1 0 0 0 0   0 0 0 1 0  
+0 0 0 1 0   0 0 1 0 0   0 0 0 0 1   0 0 0 1 0   0 0 0 0 1  
+
+0 0 1 0 0   0 0 1 0 0   0 0 0 1 0   0 0 0 1 0   0 0 0 0 1  
+1 0 0 0 0   0 0 0 0 1   1 0 0 0 0   0 1 0 0 0   0 1 0 0 0  
+0 0 0 1 0   0 1 0 0 0   0 0 1 0 0   0 0 0 0 1   0 0 0 1 0  
+0 0 0 0 1   0 0 1 0 0   1 0 0 0 0   0 0 0 1 0   0 1 0 0 0  
+0 1 0 0 0   1 0 0 0 0   0 0 1 0 0   0 1 0 0 0   0 0 0 1 0  
+
 
 **Giải thích:**  
 1.	Chương trình đọc giá trị N = 5.
