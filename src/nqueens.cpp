@@ -3,44 +3,47 @@
 using namespace std;
 
 int N = 1;
-vector <int> x;
-vector<vector<int>> a;
-vector <bool> c1;
-vector <bool> c2;
-vector <bool> c;
+vector <int> queenIndex;
+vector<vector<int>> possibleSolution;
+vector <bool> mainDiagonal;
+vector <bool> primaryDiagonal;
+vector <bool> column;
 
-bool check(int i, int j) {
-    if (c[j] == false || c1[i - j + N - 1] == false || c2[i + j - 2] ==  false)
+bool check(int row, int col) {
+    if (column[col] == false || mainDiagonal[row - col + N - 1] == false || primaryDiagonal[row + col - 2] ==  false)
         return false;
     return true;
 }
 
-void NQueen(int i) {
-    for (int j = 1; j <= N; j++)
-        if (check(i, j)) {
-            x[i] = j;
-            c[j] = c1[i - j + N - 1] = c2[i + j - 2] = false;
-            if (i == N)
-                a.push_back(x);
+void NQueen(int row) {
+    for (int col = 1; col <= N; col++){
+        if (check(row, col)) {
+            queenIndex[row] = col;
+            column[col] = mainDiagonal[row - col + N - 1] = primaryDiagonal[row + col - 2] = false;
+            if (row == N)
+                possibleSolution.push_back(queenIndex);
             else
-                NQueen(i + 1);
-            c[j] = c1[i - j + N - 1] = c2[i + j - 2] = true;
+                NQueen(row + 1);
+            column[col] = mainDiagonal[row - col + N - 1] = primaryDiagonal[row + col - 2] = true;
         }
+    }
 }
 
 int main() {
     cout << "N = ";
     cin >> N;
-    x.resize(N + 1);
-    c.resize(N + 1, true);
-    c1.resize(2 * N - 1, true);
-    c2.resize(2 * N - 1, true);
+
+    queenIndex.resize(N + 1);
+    column.resize(N + 1, true);
+    mainDiagonal.resize(2 * N - 1, true);
+    primaryDiagonal.resize(2 * N - 1, true);
+    
     NQueen(1);
-    cout << a.size() << endl << endl;
-    for (int k = 0; k < a.size(); k++) {
+    cout << possibleSolution.size() << endl << endl;
+    for (int k = 0; k < possibleSolution.size(); k++) {
         for (int i = 1; i <= N; i++) {
             for (int j = 1; j <= N; j++) {
-                cout << (j == a[k][i]) << " ";
+                cout << (j == possibleSolution[k][i]) << " ";
                 if (j % N == 0)
                     cout << endl;
             }
